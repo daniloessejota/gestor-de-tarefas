@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -80,37 +78,6 @@
         
             <div class="col-sm-3"></div>
         </div>
-
-        <!-- Apresentando as tarefas cadastradas em uma tabela  -->
-        <table class="mt-3 table table-striped table-bordered align-middle">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">Tarefas</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Prazo</th>
-                    <th scope="col">Prioridade</th>
-                    <th scope="col">Concluída</th>
-                    <th scope="col">Opções</th>
-                </tr>
-            </thead>
-
-            <?php
-                include ("tasks.php");  
-
-                foreach ($tarefas as $key => $valor) : ?>
-                    <tr scope="row">
-                        <td> <?php echo $valor['tarefas']; ?> </td>
-                        <td> <?php echo $valor['descricao']; ?> </td>
-                        <td> <?php echo exibe_data($valor['prazo']); ?> </td>
-                        <td> <?php echo exibe_prioridade($valor['prioridade']); ?> </td>
-                        <td> <?php echo exibe_conclusao($valor['tarefa_concluida']); ?> </td>
-                        <td><a href="editar.php?id=<?php echo $valor['id']?>;">EDITAR</a></td>
-                    </tr>
-                
-                <?php endforeach;?>
-
-        </table>
-
         </form>
         </div>
     </div>
