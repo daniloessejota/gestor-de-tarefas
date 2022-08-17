@@ -2,25 +2,13 @@
     require ("database.php");
     require ("helpers.php");
 
-    $exibe_tabela = true;
-
-    /* if (array_key_exists('tarefa', $_GET)) {
-        $_SESSION['lista_de_tarefas'][] = $_GET['tarefa'];
-    }
-
-    $lista_de_tarefas = [];
-
-    if (array_key_exists('lista_de_tarefas', $_SESSION)) {
-        $lista_de_tarefas = $_SESSION['lista_de_tarefas'];
-    } */
-
-    
-    /* -- Recebendo a requisição por metódo GET e transformando os valores recebidos em um array para consulta: -- */
+    $exibe_tabela = false;
 
     $lista_de_tarefas = array();
 
     if (array_key_exists ('tarefa', $_GET) and $_GET['tarefa'] != '') {
             $lista_de_tarefas = array(
+            'id' => $_GET['id'],
             'tarefas' => $_GET['tarefa'],
             'descricao' => '',
             'prazo' => '',
@@ -39,21 +27,12 @@
     if (array_key_exists ('tarefa_finalizada', $_GET)) {
         $lista_de_tarefas['finalizada'] = 1;
     }
-;
-    /* -- Mantendo os valores mesmo com a mudança das requisições: -- */
 
-    //$_SESSION['lista_de_tarefas'][] = $lista_de_tarefas;
-    
-    cadastrar_tarefas($connection, $lista_de_tarefas);
-    
+    editar_uma_tarefa($connection, $lista_de_tarefas);
+
     }
 
-    /* if (isset($_SESSION['lista_de_tarefas'])) {
-        $lista_de_tarefas = $_SESSION['lista_de_tarefas'];
-    } else {
-        $lista_de_tarefas = array();
-    } */
-    
-    $tarefas = buscar_tarefas($connection);
+    $tarefa = buscar_uma_tarefa($connection, $_GET['id']);
 
+    require ("index.php");
 ?>

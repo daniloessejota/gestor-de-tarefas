@@ -17,16 +17,11 @@
 <body>
     
     <div class="container">
-        
-        <div class="row">
-            <div class="col-sm-12 mb-4 text-center">
-                <h1>Gestor de Tarefas</h1>
-            </div>
-        </div>
 
     <table class="mt-3 table table-striped table-bordered align-middle">
         <thead class="table-dark">
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Tarefas</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Prazo</th>
@@ -41,12 +36,13 @@
         foreach ($tarefas as $key => $valor) : ?>
 
         <tr scope="row">
+            <td> <?php echo $valor['id']; ?> </td>
             <td> <?php echo $valor['tarefas']; ?> </td>
             <td> <?php echo $valor['descricao']; ?> </td>
             <td> <?php echo exibe_data($valor['prazo']); ?> </td>
             <td> <?php echo exibe_prioridade($valor['prioridade']); ?> </td>
             <td> <?php echo exibe_conclusao($valor['tarefa_concluida'])?> </td>
-            <td><a href="editar.php?id=<?php echo $valor['id']?>;">EDITAR</a></td>
+            <td><a href="edit-tasks.php?id=<?php echo $valor['id'];?>">EDITAR</a></td>
         </tr>
 
     <?php endforeach;?>
