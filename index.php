@@ -26,9 +26,9 @@
             </div>
         </div>
         
-        <?php 
-            require ('tasks.php');
+        <?php     
             require ('form.php');
+            require ('tasks.php');
         ?>
 
         <?php if ($exibe_tabela) : ?>

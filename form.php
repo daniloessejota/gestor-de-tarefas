@@ -1,4 +1,7 @@
 <?php
+    if ($tarefa['id'] > 0) {
+        $tarefa;
+    } else {
         $tarefa = [
             'id' => 0,
             'tarefas' => '',
@@ -6,7 +9,9 @@
             'prazo' => '',
             'prioridade' => 0,
             'concluida' => '',
-        ]; 
+        ];
+    } 
+
 ?>
 
 <!DOCTYPE html>

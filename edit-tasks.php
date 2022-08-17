@@ -1,7 +1,7 @@
 <?php
     require ("database.php");
     require ("helpers.php");
-
+    
     $exibe_tabela = false;
 
     $lista_de_tarefas = array();
@@ -28,11 +28,11 @@
         $lista_de_tarefas['finalizada'] = 1;
     }
 
-    editar_uma_tarefa($connection, $lista_de_tarefas);
+    //editar_uma_tarefa($connection, $lista_de_tarefas);
 
     }
 
     $tarefa = buscar_uma_tarefa($connection, $_GET['id']);
 
-    require ("index.php");
+    require ("form.php");
 ?>
