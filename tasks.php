@@ -2,8 +2,6 @@
     require ("database.php");
     require ("helpers.php");
 
-    $exibe_tabela = true;
-
     /* if (array_key_exists('tarefa', $_GET)) {
         $_SESSION['lista_de_tarefas'][] = $_GET['tarefa'];
     }
@@ -42,7 +40,7 @@
 ;
     /* -- Mantendo os valores mesmo com a mudança das requisições: -- */
 
-    //$_SESSION['lista_de_tarefas'][] = $lista_de_tarefas;
+    $_SESSION['lista_de_tarefas'][] = $lista_de_tarefas;
     
     cadastrar_tarefas($connection, $lista_de_tarefas);
     

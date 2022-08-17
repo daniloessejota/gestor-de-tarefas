@@ -18,6 +18,12 @@
     
     <div class="container">
         
+        <div class="row">
+            <div class="col-sm-12 mb-4 text-center">
+                <h1>Gestor de Tarefas</h1>
+            </div>
+        </div>
+        
         <!-- Início do Formulário -->
         <div class="row">
             <div class="col-sm-12 border">

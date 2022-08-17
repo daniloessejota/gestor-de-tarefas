@@ -55,10 +55,10 @@
     /* FORMATANDO O CAMPO CONCLUIDA DA TABELA PARA LEITURA DO USUÁRIO */
 
     function exibe_conclusao($valor) {
-        if ($valor != 1) {
-            return 'NÃO';
+        if ($valor == 1) {
+            return 'SIM';
         }
-        
-        return 'SIM';
+
+        return 'NÃO';
     }
 ?>
