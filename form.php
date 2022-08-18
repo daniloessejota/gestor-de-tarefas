@@ -1,16 +1,6 @@
 <?php
-    if ($tarefa['id'] > 0) {
-        $tarefa;
-    } else {
-        $tarefa = [
-            'id' => 0,
-            'tarefas' => '',
-            'descricao' => '',
-            'prazo' => '',
-            'prioridade' => 0,
-            'concluida' => '',
-        ];
-    } 
+
+    ($tarefa['id'] > 0) ? $tarefa : $tarefa = ['id' => 0, 'tarefas' => '', 'descricao' => '', 'prazo' => '','prioridade' => 0, 'tarefa_concluida' => ''];
 
 ?>
 
@@ -40,7 +30,7 @@
                 <form action="" method="get">
                     <div class="row p-2">
 
-                        <input type="hidden" name="id_da_tarefa" value="<?php echo $tarefa['id']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $tarefa['id']; ?>">
 
                         <div class="mb-3 col-sm-4">
                             <label for="tarefa" class="form-label">Tarefa</label>
@@ -82,7 +72,7 @@
                     </div>
 
                     <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value="1" <?php echo ($tarefa['concluida'] == 1) ? 'checked' : ''; ?> >
+                        <input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value="1" <?php echo ($tarefa['tarefa_concluida'] == 1) ? 'checked' : ''; ?> >
                         <label class="form-check-label" for="tarefa_finalizada">tarefa finalizada</label>
                     </div>
 

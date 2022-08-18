@@ -21,7 +21,6 @@
     <table class="mt-3 table table-striped table-bordered align-middle">
         <thead class="table-dark">
             <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Tarefas</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Prazo</th>
@@ -36,7 +35,6 @@
         foreach ($tarefas as $key => $valor) : ?>
 
         <tr scope="row">
-            <td> <?php echo $valor['id']; ?> </td>
             <td> <?php echo $valor['tarefas']; ?> </td>
             <td> <?php echo $valor['descricao']; ?> </td>
             <td> <?php echo exibe_data($valor['prazo']); ?> </td>

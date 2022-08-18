@@ -45,7 +45,7 @@
     //$_SESSION['lista_de_tarefas'][] = $lista_de_tarefas;
     
     cadastrar_tarefas($connection, $lista_de_tarefas);
-    
+
     }
 
     /* if (isset($_SESSION['lista_de_tarefas'])) {

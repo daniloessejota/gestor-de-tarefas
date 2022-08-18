@@ -46,16 +46,16 @@ function buscar_uma_tarefa ($connection, $id) {
 
 }
 
-/* function editar_uma_tarefa ($connection, $lista_de_tarefas) {
-    if ($lista_de_tarefas['prazo'] == '') {
+function editar_uma_tarefa ($connection, $tarefa) {
+    if ($tarefa['prazo'] == '') {
         $prazo = 'NULL';
     } else {
-        $prazo = "'{$lista_de_tarefas['prazo']}'";
+        $prazo = "'{$tarefa['prazo']}'";
     }
+
+    $sql_editar = "UPDATE tb_tarefas SET tarefas = '{$tarefa['tarefas']}', descricao = '{$tarefa['descricao']}', prazo = '{$tarefa['prazo']}', prioridade = '{$tarefa['prioridade']}', tarefa_concluida = '{$tarefa['tarefa_concluida']}' WHERE id = '{$tarefa['id']}'";
+
+    mysqli_query($connection, $sql_editar);
 }
-
-    $sql_editar = "UPDATE tb_tarefas SET tarefas = '{$lista_de_tarefas['tarefas']}', descricao = '{$lista_de_tarefas['descricao']}', prazo = '{$lista_de_tarefas['prazo']}', prioridade = '{$lista_de_tarefas['prioridade']}', tarefa_concluida = '{$lista_de_tarefas['tarefa_concluida']}' WHERE id = '{$lista_de_tarefas['id']}'";
-
-    mysqli_query($connection, $sql_editar); */
 
 ?>

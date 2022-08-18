@@ -28,9 +28,14 @@
         $lista_de_tarefas['finalizada'] = 1;
     }
 
-    //editar_uma_tarefa($connection, $lista_de_tarefas);
+    editar_uma_tarefa($connection, $lista_de_tarefas);
+
+    header('Location: index.php');
+    die();
 
     }
+
+    $tarefa = [];
 
     $tarefa = buscar_uma_tarefa($connection, $_GET['id']);
 
