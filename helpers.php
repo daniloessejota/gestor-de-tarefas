@@ -3,23 +3,20 @@
     /* FORMATANDO AS PRIORIDADES PARA LEITURA DO USUÁRIO */
 
     function exibe_prioridade ($valor) {
-        $prioridade = '';
 
         switch ($valor) {
             case 1:
-                $prioridade = 'Baixa';
+                echo 'Baixa';
                 break;
 
             case 2:
-                $prioridade = 'Média';
+                echo 'Média';
                 break;
 
-            case 2:
-                $prioridade = 'Alta';
+            case 3:
+                echo 'Alta';
                 break;
         }
-
-        return $prioridade; 
 
     }
 
@@ -55,10 +52,6 @@
     /* FORMATANDO O CAMPO CONCLUIDA DA TABELA PARA LEITURA DO USUÁRIO */
 
     function exibe_conclusao($valor) {
-        if ($valor == 1) {
-            return 'SIM';
-        }
-
-        return 'NÃO';
+        echo ($valor == 0)  ? 'NÃO' : 'SIM'; 
     }
 ?>

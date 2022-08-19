@@ -20,14 +20,7 @@
     
     <div class="container">
         
-        <div class="row">
-            <div class="col-sm-12 mb-4 text-center">
-                <h1>Gestor de Tarefas</h1>
-            </div>
-        </div>
-        
         <?php     
-            require ('form.php');
             require ('tasks.php');
         ?>
 

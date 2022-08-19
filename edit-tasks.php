@@ -25,7 +25,7 @@
         $lista_de_tarefas['prazo'] = $_GET['prazo'];
     }
     if (array_key_exists ('tarefa_finalizada', $_GET)) {
-        $lista_de_tarefas['finalizada'] = 1;
+        $lista_de_tarefas['tarefa_concluida'] = 1;
     }
 
     editar_uma_tarefa($connection, $lista_de_tarefas);
@@ -34,8 +34,6 @@
     die();
 
     }
-
-    $tarefa = [];
 
     $tarefa = buscar_uma_tarefa($connection, $_GET['id']);
 

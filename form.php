@@ -1,9 +1,3 @@
-<?php
-
-    ($tarefa['id'] > 0) ? $tarefa : $tarefa = ['id' => 0, 'tarefas' => '', 'descricao' => '', 'prazo' => '','prioridade' => 0, 'tarefa_concluida' => ''];
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,6 +17,12 @@
 <body>
     
     <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 mb-4 text-center">
+                <?php echo ($tarefa['id'] > 0) ? '<h1>Edição</h1>' : '<h1>Gestor de Tarefas</h1>'; ?>
+            </div>
+        </div>
         
         <!-- Início do Formulário -->
         <div class="row">
@@ -49,18 +49,18 @@
                             <br>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="prioridade" id="prioridade" value="1" <?php echo ($tarefa['prioridade'] == 1) ? 'checked' : ''; ?> >
+                                <input class="form-check-input" type="radio" name="prioridade" id="prioridade_baixa" value= 1 <?php echo ($tarefa['prioridade'] == 1) ? 'checked' : ''; ?> >
                                 <label for="prioridade_baixa" class="form-check-label">Baixa</label>
                             </div>
 
                             <form-check-inline>
-                                <input class="form-check-input" type="radio" name="prioridade" id="prioridade" value="2" <?php echo ($tarefa['prioridade'] == 2) ? 'checked' : ''; ?> >
+                                <input class="form-check-input" type="radio" name="prioridade" id="prioridade_media" value= 2 <?php echo ($tarefa['prioridade'] == 2) ? 'checked' : ''; ?> >
                                 <label  for="prioridade_media"  class="form-check-label">Média</label>
                             </form-check-inline>
                             
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input"  type="radio" name="prioridade" id="prioridade" value="3" <?php echo ($tarefa['prioridade'] == 3) ? 'checked' : ''; ?> >
-                                <label  for="prioridade_alta"  class="form-check-label">Alta</label>
+                                <input class="form-check-input"  type="radio" name="prioridade" id="prioridade_alta" value= 3 <?php echo ($tarefa['prioridade'] == 3) ? 'checked' : ''; ?> >
+                                <label  for="prioridade_alta" class="form-check-label">Alta</label>
                             </div>
                         </div>
 
@@ -72,13 +72,20 @@
                     </div>
 
                     <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value="1" <?php echo ($tarefa['tarefa_concluida'] == 1) ? 'checked' : ''; ?> >
-                        <label class="form-check-label" for="tarefa_finalizada">tarefa finalizada</label>
+
+                        <?php echo ($tarefa['tarefa_concluida'] == 1)  ?
+                        '<input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value = 1 checked>' : '<input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value = 1>' ; ?>
+
+                        <?php echo ($tarefa['tarefa_concluida'] == 1)  ? '<label for="tarefa_finalizada" class="form-check-label" for="tarefa_finalizada">tarefa finalizada</label>'  : '<label for="tarefa_finalizada" class="form-check-label" for="tarefa_finalizada">tarefa finalizada</label>'; ?>
+
                     </div>
 
                     <div class="row justify-content-end m-2">
-                        <input type="submit" value= "<?php echo ($tarefa['id'] > 0) ? 'Atualizar' : 'Cadastrar'; ?>"
-                        class="col-2 col-sm-2 btn btn-primary col-form-label">
+
+                        <?php echo ($tarefa['id'] > 0) ?
+                        '<button class="col-2 col-sm-2 btn btn-primary col-form-label"><a href="index.php">Cancelar</a></button>' : ''; ?>
+
+                        <input type="submit" value= "<?php echo ($tarefa['id'] > 0) ? 'Atualizar' : 'Cadastrar'; ?>" class="col-2 col-sm-2 btn btn-primary col-form-label">
                     </div>
         
             <div class="col-sm-3"></div>

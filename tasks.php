@@ -37,7 +37,7 @@
         $lista_de_tarefas['prazo'] = $_GET['prazo'];
     }
     if (array_key_exists ('tarefa_finalizada', $_GET)) {
-        $lista_de_tarefas['finalizada'] = 1;
+        $lista_de_tarefas['tarefa_concluida'] = 1;
     }
 ;
     /* -- Mantendo os valores mesmo com a mudança das requisições: -- */
@@ -45,6 +45,9 @@
     //$_SESSION['lista_de_tarefas'][] = $lista_de_tarefas;
     
     cadastrar_tarefas($connection, $lista_de_tarefas);
+    
+    header('Location: index.php');
+    die();
 
     }
 
@@ -53,7 +56,11 @@
     } else {
         $lista_de_tarefas = array();
     } */
-    
+
     $tarefas = buscar_tarefas($connection);
+
+    $tarefa = ['id' => 0, 'tarefas' => '', 'descricao' => '', 'prazo' => '','prioridade' => 0, 'tarefa_concluida' => ''];
+    
+    require 'form.php';
 
 ?>

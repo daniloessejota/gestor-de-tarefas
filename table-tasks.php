@@ -32,6 +32,9 @@
 
     <?php
 
+        //print_r($tarefas);
+        //exit();
+
         foreach ($tarefas as $key => $valor) : ?>
 
         <tr scope="row">
