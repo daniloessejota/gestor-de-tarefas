@@ -58,4 +58,10 @@ function editar_uma_tarefa ($connection, $tarefa) {
     mysqli_query($connection, $sql_editar);
 }
 
+function remover_tarefa ($connection, $id) {
+    $sql_excluir = "DELETE FROM tb_tarefas WHERE id =" . $id;
+
+    mysqli_query($connection, $sql_excluir);
+}
+
 ?>

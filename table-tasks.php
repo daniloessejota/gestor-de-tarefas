@@ -43,7 +43,10 @@
             <td> <?php echo exibe_data($valor['prazo']); ?> </td>
             <td> <?php echo exibe_prioridade($valor['prioridade']); ?> </td>
             <td> <?php echo exibe_conclusao($valor['tarefa_concluida'])?> </td>
-            <td><a href="edit-tasks.php?id=<?php echo $valor['id'];?>">EDITAR</a></td>
+            <td>
+                <a href="edit-tasks.php?id=<?php echo $valor['id'];?>">EDITAR</a>
+                <a href="remove-tasks.php?id=<?php echo $valor['id'];?>">EXCLUIR</a>
+            </td>
         </tr>
 
     <?php endforeach;?>
