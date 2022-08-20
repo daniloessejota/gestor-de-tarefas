@@ -27,7 +27,7 @@
         <!-- Início do Formulário -->
         <div class="row">
             <div class="col-sm-12 border">
-                <form action="" method="get">
+                <form action="" method="post">
                     <div class="row p-2">
 
                         <input type="hidden" name="id" value="<?php echo $tarefa['id']; ?>">
