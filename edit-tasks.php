@@ -14,7 +14,7 @@
             'prazo' => '',
             'prioridade' => $_POST['prioridade'],
             'tarefa_concluida' => 0,
-            );
+            ); 
 
     /* -- Preenchendo os elementos do array acima que ficam em branco por padrão porque são opcionais: -- */
 

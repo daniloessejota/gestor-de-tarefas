@@ -3,64 +3,62 @@
     require ("helpers.php");
 
     $exibe_tabela = true;
-
-    /* if (array_key_exists('tarefa', $_POST)) {
-        $_SESSION['lista_de_tarefas'][] = $_POST['tarefa'];
-    }
-
-    $lista_de_tarefas = [];
-
-    if (array_key_exists('lista_de_tarefas', $_SESSION)) {
-        $lista_de_tarefas = $_SESSION['lista_de_tarefas'];
-    } */
-
     
     /* -- Recebendo a requisição por metódo GET e transformando os valores recebidos em um array para consulta: -- */
 
-    $lista_de_tarefas = array();
+    //$lista_de_tarefas = array();
+    
+    $tem_erros = false;
+    $erros_validacao = [];
 
-    if (array_key_exists ('tarefa', $_POST) and $_POST['tarefa'] != '') {
-            $lista_de_tarefas = array(
+    if (tem_post()) {
+
+        $lista_de_tarefas = array(
+            'id' => $_POST['id'],
             'tarefas' => $_POST['tarefa'],
             'descricao' => '',
-            'prazo' => '',
+            'prazo' => $_POST['prazo'],
             'prioridade' => $_POST['prioridade'],
             'tarefa_concluida' => 0,
             );
 
+        $hoje = date("Y-m-d"); 
+        
+        if ($lista_de_tarefas['prazo'] < $hoje) {
+            $tem_erros = true;
+
+            $erros_validacao['prazo'] = 'Não podemos voltar para o passado, digite uma data válida.';
+        }
+
     /* -- Preenchendo os elementos do array acima que ficam em branco por padrão porque são opcionais: -- */
 
-    if (array_key_exists ('descricao', $_POST)) {
-         $lista_de_tarefas['descricao'] = $_POST['descricao'];
-    }
-    if (array_key_exists ('prazo', $_POST)) {
-        $lista_de_tarefas['prazo'] = $_POST['prazo'];
-    }
-    if (array_key_exists ('tarefa_finalizada', $_POST)) {
-        $lista_de_tarefas['tarefa_concluida'] = 1;
-    }
-;
-    /* -- Mantendo os valores mesmo com a mudança das requisições: -- */
+        if (array_key_exists ('descricao', $_POST)) {
+             $lista_de_tarefas['descricao'] = $_POST['descricao'];
+        }
 
-    //$_SESSION['lista_de_tarefas'][] = $lista_de_tarefas;
+        if (array_key_exists ('tarefa_finalizada', $_POST)) {
+            $lista_de_tarefas['tarefa_concluida'] = 1;
+        }
+
+    if ($tem_erros == false) {
+        cadastrar_tarefas($connection, $lista_de_tarefas);
     
-    cadastrar_tarefas($connection, $lista_de_tarefas);
-    
-    header('Location: index.php');
-    die();
-
+        header('Location: index.php');
+        die();
     }
-
-    /* if (isset($_SESSION['lista_de_tarefas'])) {
-        $lista_de_tarefas = $_SESSION['lista_de_tarefas'];
-    } else {
-        $lista_de_tarefas = array();
-    } */
+    }
 
     $tarefas = buscar_tarefas($connection);
 
-    $tarefa = ['id' => 0, 'tarefas' => '', 'descricao' => '', 'prazo' => '','prioridade' => 0, 'tarefa_concluida' => ''];
+    $tarefa = [
+            'id' => $_POST['id'] ?? 0,
+            'tarefas' => $_POST['tarefa'] ?? '',
+            'descricao' => $_POST['descricao'] ?? '',
+            'prazo' => $_POST['prazo'] ?? '',
+            'prioridade' => $_POST['prioridade'] ?? '',
+            'tarefa_concluida' =>  $_POST['concluida'] ?? 0,
+        ];
     
-    require 'form.php';
+    require ('form.php');
 
 ?>

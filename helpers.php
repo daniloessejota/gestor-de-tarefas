@@ -54,4 +54,8 @@
     function exibe_conclusao($valor) {
         echo ($valor == 0)  ? 'NÃO' : 'SIM'; 
     }
+
+    function tem_post() {
+        return count($_POST) > 0;
+    }
 ?>

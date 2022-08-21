@@ -39,9 +39,16 @@
                         </div>
 
                         <div class="mb-3 col-sm-3">
-                            <label for="prazo" class="form-label">Prazo (opcional):</label>
+                            <label for="prazo" class="form-label">
+
+                                Prazo (opcional):
+                                    <?php if ($tem_erros and array_key_exists('prazo', $erros_validacao)) : ?>
+                                        <span><?php echo $erros_validacao['prazo']; ?></span>
+                                    <?php endif; ?>
+
                             <input type="date" name="prazo" id="prazo" value="<?php echo $tarefa['prazo']; ?>"
                             class="form-control">
+                            </label>
                         </div>
 
                         <div class="mb-3 col-sm-5">
