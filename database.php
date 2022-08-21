@@ -97,37 +97,57 @@ function cadastrar_tarefas($connection, $lista_de_tarefas) {
 //LEITURA INDIVIDUAL DE UMA TAREFA 
 //METÓDO PROCEDURAL
 function buscar_uma_tarefa ($connection, $id) {
-    $id_tarefa = $id;
 
     $stmt = mysqli_prepare ($connection, "SELECT * FROM tb_tarefas WHERE id = ? "); 
 
-    mysqli_stmt_bind_param($stmt, 'i', $id_tarefa); //preparando o statement
+    mysqli_stmt_bind_param($stmt, 'i', $id); //preparando o statement
 
     mysqli_stmt_execute($stmt); //executando o statement preparado
-    $varredura = mysqli_stmt_get_result($stmt); //
-    $resultado = mysqli_fetch_assoc($varredura); //
+    $varredura = mysqli_stmt_get_result($stmt); //recupera um conjunto de resultados de uma instrução preparada
+    $resultado = mysqli_fetch_assoc($varredura); //traz o resultado para um array associativo
 
     return $resultado;
 }
 
 //EDIÇÃO DIRETA DOS DADOS
-function editar_uma_tarefa ($connection, $tarefa) {
-    if ($tarefa['prazo'] == '') {
-        $prazo = 'NULL';
-    } else {
-        $prazo = "'{$tarefa['prazo']}'";
-    }
+//function editar_uma_tarefa ($connection, $tarefa) {
+//    if ($tarefa['prazo'] == '') {
+//        $prazo = 'NULL';
+//    } else {
+//        $prazo = "'{$tarefa['prazo']}'";
+//    }
+//
+//    $sql_editar = "UPDATE tb_tarefas SET tarefas = '{$tarefa['tarefas']}', descricao ='{$tarefa['descricao']}', prazo = '{$tarefa['prazo']}', prioridade = '{$tarefa//['prioridade']}', tarefa_concluida = '{$tarefa['tarefa_concluida']}' WHERE id = '//{$tarefa['id']}'";
+//
+//    mysqli_query($connection, $sql_editar);
+//}
 
-    $sql_editar = "UPDATE tb_tarefas SET tarefas = '{$tarefa['tarefas']}', descricao = '{$tarefa['descricao']}', prazo = '{$tarefa['prazo']}', prioridade = '{$tarefa['prioridade']}', tarefa_concluida = '{$tarefa['tarefa_concluida']}' WHERE id = '{$tarefa['id']}'";
+function editar_uma_tarefa ($connection, $lista_de_tarefas) {
+    $id_de_tarefas = $lista_de_tarefas['id'] ;
+    $tarefa = $lista_de_tarefas['tarefas'] ;
+    $descricao = $lista_de_tarefas['descricao'] ;
+    $prazo = $lista_de_tarefas['prazo'];
+    $prioridade = $lista_de_tarefas['prioridade'];
+    $conclusao = $lista_de_tarefas['tarefa_concluida'];
 
-    mysqli_query($connection, $sql_editar);
+    $stmt = mysqli_prepare($connection, "UPDATE tb_tarefas SET tarefas = ?, descricao = ?, prazo = ?, prioridade = ?, tarefa_concluida = ? WHERE id = ?");
+
+    mysqli_stmt_bind_param($stmt, 'sssiii', $tarefa, $descricao, $prazo, $prioridade, $conclusao, $id_de_tarefas); // or die( mysqli_error($connection)); para exibir o erro; //preparando o statement
+
+    mysqli_stmt_execute($stmt); // or die( mysqli_stmt_error($connection)) para exibir o erro; //executando o statement preparado
+    mysqli_stmt_close($stmt); //fechando statement e conexão
 }
 
 //APAGANDO TAREFAS CONCLÚIDAS
 function remover_tarefa ($connection, $id) {
-    $sql_excluir = "DELETE FROM tb_tarefas WHERE id =" . $id;
 
-    mysqli_query($connection, $sql_excluir);
+    $stmt = mysqli_prepare($connection, "DELETE FROM tb_tarefas WHERE id = ?"); 
+
+    mysqli_stmt_bind_param($stmt, 'i', $id); //preparando o statement
+
+    mysqli_stmt_execute($stmt); //executando o statement preparado
+    mysqli_stmt_close($stmt); //fechando statement e conexão
+
 }
 
 ?>
