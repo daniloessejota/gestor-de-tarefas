@@ -21,20 +21,6 @@
     }
 
     //Formatando as datas para exibição do usuário
-    //Por meio de um função com array e o metódo explode
-    /*function data ($data) {
-        if ($data == "" or $data == "0000-00-00") {
-            return "";
-        } 
-
-        $dados = explode("-", $data);
-        
-        $data_exibir = "{$dados[2]}/{$dados[1]}/{$dados[0]}";
-
-        return $data_exibir;
-
-    } */
-
     //Por meio de um objeto
     function exibe_data ($data) {
         if ($data == "" or $data == "0000-00-00") {
