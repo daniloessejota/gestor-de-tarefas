@@ -1,4 +1,7 @@
+<!--  Tabela para exibição das Tarefas Cadastradas -->
+
 <!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -31,9 +34,6 @@
         </thead>
 
     <?php
-
-        //print_r($tarefas);
-        //exit();
 
         foreach ($tarefas as $key => $valor) : ?>
 

@@ -1,7 +1,7 @@
 <?php
-    
-    /* FORMATANDO AS PRIORIDADES PARA LEITURA DO USUÁRIO */
+    //Funções para Trabalhos Recorrentes
 
+    //Formatando as prioridades para exibição ao usuário
     function exibe_prioridade ($valor) {
 
         switch ($valor) {
@@ -20,10 +20,8 @@
 
     }
 
-
-    /* FORMATANDO AS DATAS PARA LEITURA DO USUÁRIO
-    Por meio de um função com array e o metódo explode */
-
+    //Formatando as datas para exibição do usuário
+    //Por meio de um função com array e o metódo explode
     /*function data ($data) {
         if ($data == "" or $data == "0000-00-00") {
             return "";
@@ -37,8 +35,7 @@
 
     } */
 
-    /* por meio de um objeto */
-
+    //Por meio de um objeto
     function exibe_data ($data) {
         if ($data == "" or $data == "0000-00-00") {
             return "";
@@ -49,12 +46,12 @@
         return $objeto_data -> format('d/m/Y');
     }
 
-    /* FORMATANDO O CAMPO CONCLUIDA DA TABELA PARA LEITURA DO USUÁRIO */
-
+    //Formatando o a conclusão para leitura do usuário
     function exibe_conclusao($valor) {
         echo ($valor == 0)  ? 'NÃO' : 'SIM'; 
     }
 
+    //Confere se existe valores transmitidos via POST 
     function tem_post() {
         return count($_POST) > 0;
     }

@@ -1,5 +1,8 @@
 <?php
 
+//Script PHP com as requisições feitas ao Banco de Dados;
+
+//Informações sobre o Banco de Dados:
 $dbServer = 'localhost';
 $dbUser = 'useradmin';
 $dbPass = 'Bluppus@2022';
@@ -9,7 +12,8 @@ $connection = mysqli_connect($dbServer, $dbUser, $dbPass, $dbNameDatabase);
 
 //CHECANDO A CONEXÃO
 if (!$connection) {
-    echo 'Não foi possível conectar ao Banco de Dados. Erro: ' . mysqli_connect_errno();
+    echo 'Não foi possível conectar ao Banco de Dados. Erro: ' . mysqli_connect_errno(); //exibe o erro em caso de falha na conexão
+    
     exit();
 }
 
@@ -139,7 +143,7 @@ function editar_uma_tarefa ($connection, $lista_de_tarefas) {
     mysqli_stmt_close($stmt); //fechando statement e conexão
 }
 
-//APAGANDO TAREFAS CONCLÚIDAS
+//APAGANDO TAREFAS CONCLUÍDAS
 function remover_tarefa ($connection, $id) {
 
     $stmt = mysqli_prepare($connection, "DELETE FROM tb_tarefas WHERE id = ?"); 
