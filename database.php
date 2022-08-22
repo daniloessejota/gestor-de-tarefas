@@ -94,7 +94,7 @@ function cadastrar_tarefas($connection, $lista_de_tarefas) {
 //}
 
 
-//LEITURA INDIVIDUAL DE UMA TAREFA 
+//LEITURA
 //METÓDO PROCEDURAL
 function buscar_uma_tarefa ($connection, $id) {
 
@@ -122,6 +122,7 @@ function buscar_uma_tarefa ($connection, $id) {
 //    mysqli_query($connection, $sql_editar);
 //}
 
+//EDIÇÃO
 function editar_uma_tarefa ($connection, $lista_de_tarefas) {
     $id_de_tarefas = $lista_de_tarefas['id'] ;
     $tarefa = $lista_de_tarefas['tarefas'] ;
