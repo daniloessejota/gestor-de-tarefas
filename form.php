@@ -35,7 +35,8 @@
                     
                     <div class="row p-2">
                         
-                        <!-- ID Input - não deve ser visualizadon <input type="hidden" name="id" value="<?php //echo $tarefa['id']; ?>"> -->
+                        <!-- Input ID  - não deve ser visualizado -->
+                         <input type="hidden" name="id" value="<?php echo $tarefa['id']; ?>">
 
                         <!-- Input Tarefa  -->
                         <div class="mb-3 col-sm-4">
