@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+body {
+    background-color: var(--cor_2);
+    font-family: var(--font_1);
+}
+
+.form {
+    background-color: var(--cor_1);
+    border-radius: 5px;
+    box-shadow: var(--shadow_1);
+}
+
+.btn-primary {
+    background-color: var(--cor-8);
+}
+

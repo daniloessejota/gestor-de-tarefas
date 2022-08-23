@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap');
+
+* {
+    --cor_1: #E6E8EA;
+    --cor_2: #FEB524;
+    --cor_3: #52B6D7;
+    --cor_4: #579FC5;
+    --cor_5: #DB0530;
+    --cor_6: #FFD06A;
+    --cor_7: #558B2A;
+    --cor_8: #040C0B;
+    --cor_9: #4E4E56;
+
+    --shadow_1: 0px 0px 1px rgba(0, 0, 0, 0.078), 0px 0px 2.6px rgba(0, 0, 0, 0.111),0px 0px 5.3px rgba(0, 0, 0, 0.139), 0px 0px 11px rgba(0, 0, 0, 0.172), 0px 0px 30px rgba(0, 0, 0, 0.25);
+    
+    --font_1: 'Inter', system-ui, sans-serif;
+}
