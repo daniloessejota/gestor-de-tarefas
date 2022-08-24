@@ -1,8 +1,10 @@
 @charset "utf-8";
 
+/* ESTILOS ADICIONAIS E CUSTOMIZADOS */
+
 body {
-    background-color: var(--cor_2);
-    font-family: var(--font_1);
+    background: var(--gradient_1);
+    font-family: var(--font_2);
 }
 
 .form {
@@ -11,7 +13,43 @@ body {
     box-shadow: var(--shadow_1);
 }
 
-.btn-primary {
-    background-color: var(--cor-8);
+.titles {
+    color: var(--cor_1);
 }
 
+table {
+    background-color: var(--cor_1);
+}
+
+button > a {
+    text-decoration: none;
+}
+
+button > a:hover {
+    color: var(--cor_1);
+}
+
+thead {
+    background-color: var(--cor_7);
+    color: var(--cor_1);
+}
+
+.baixa {
+    color: var(--cor_4);
+}
+
+.media {
+    color: var(--cor_2);
+}
+
+.alta {
+    color: var(--cor_5);
+}
+
+td > a {
+    text-decoration: none;
+}
+
+.excluir, .bi-trash {
+    color: var(--cor_5);
+}

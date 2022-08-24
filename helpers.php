@@ -6,15 +6,15 @@
 
         switch ($valor) {
             case 1:
-                echo 'Baixa';
+                echo '<span class="baixa fw-bold">BAIXA</span>';
                 break;
 
             case 2:
-                echo 'Média';
+                echo '<span class="media fw-bold">MÉDIA</span>';
                 break;
 
             case 3:
-                echo 'Alta';
+                echo '<span class="alta fw-bold">ALTA</span>';
                 break;
         }
 
@@ -34,7 +34,7 @@
 
     //Formatando o a conclusão para leitura do usuário
     function exibe_conclusao($valor) {
-        echo ($valor == 0)  ? 'NÃO' : 'SIM'; 
+        echo ($valor == 0)  ? '<span class="alta fw-bold">NÃO</span>' : '<span class="fw-bold">SIM</span>'; 
     }
 
     //Confere se existe valores transmitidos via POST 
