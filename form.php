@@ -32,7 +32,7 @@
                 <div class="col-sm-4 col-md-6 mb-2 text-center">
                 <h1 class="fw-bold pt-3"><?php echo ($tarefa['id'] > 0) ? 'Edição' : ''; ?></h1>
 
-                <p class="fs-4"> <span class="fs-3 fw-bolder">Olá, Seja Bem-Vindo!</span> <br> Eu sou o <span class="fst-italic fw-bolder">Alfred</span>, seu gestor de tarefas. Digite as tarefas que você quer fazer e vou anotar elas para você!</p>
+                <p class="fs-4"><?php echo ($tarefa['id'] > 0) ? '' : '<span class="fs-3 fw-bolder">Olá, Seja Bem-Vindo!</span> <br> Eu sou o <span class="fst-italic fw-bolder">Alfred</span>, seu gestor de tarefas. Digite as tarefas que você quer fazer e vou anotar elas para você!'; ?></p>
                 </div>
             </div>
         </header>
@@ -56,20 +56,19 @@
                         <!-- Input Tarefa  -->
                         <div class="col-sm-8 col-md-8">
                             <label for="tarefa" class="form-label fw-bold">Tarefa:</label>
-                            <input type="text" name="tarefa" id="tarefa" placeholder="escreva aqui o que você quer fazer" value="<?php echo $tarefa['tarefas']; ?>" class="form-control">
+                            <input type="text" name="tarefa" id="tarefa" placeholder="escreva aqui o que você quer fazer" required value="<?php echo $tarefa['tarefas']; ?>" class="form-control">
                         </div>
 
                         <div class="col-sm-4 col-md-4">
 
                         <!-- Input Prazo -->
-                        <label for="prazo" class="form-label fw-bold">Prazo: <br>
-                            <?php if ($tem_erros and array_key_exists('prazo', $erros_validacao)) : ?>
+                        <label for="prazo" class="form-label fw-bold">Prazo: </label>
 
+                        <input type="date" name="prazo" id="prazo" required value="<?php echo $tarefa['prazo']; ?>" class="form-control">
+
+                        <?php if ($tem_erros and array_key_exists('prazo', $erros_validacao)) : ?>
                             <span class="fw-light fs-6 text-danger"><?php echo $erros_validacao['prazo']; ?></span>
-                            <?php endif; ?>
-                        </label>
-
-                        <input type="date" name="prazo" id="prazo" value="<?php echo $tarefa['prazo']; ?>" class="form-control">
+                        <?php endif; ?>
 
                         </div>
                     </div> 
@@ -83,19 +82,19 @@
 
                                     <!-- Baixa -->
                                     <div class="form-check-inline col-sm-3">
-                                        <input class="form-check-input" type="radio" name="prioridade" id="prioridade_baixa" value= 1 <?php echo ($tarefa['prioridade'] == 1) ? 'checked' : ''; ?> >
+                                        <input class="form-check-input" type="radio" name="prioridade" id="prioridade_baixa" required value= 1 <?php echo ($tarefa['prioridade'] == 1) ? 'checked' : ''; ?> >
                                         <label for="prioridade_baixa" class="form-check-label">baixa</label>
                                     </div>
 
                                     <!-- Média -->
                                     <div class="form-check-inline col-sm-3">
-                                        <input class="form-check-input" type="radio" name="prioridade" id="prioridade_media" value= 2 <?php echo ($tarefa['prioridade'] == 2) ? 'checked' : ''; ?> >
+                                        <input class="form-check-input" type="radio" name="prioridade" id="prioridade_media" required value= 2 <?php echo ($tarefa['prioridade'] == 2) ? 'checked' : ''; ?> >
                                         <label  for="prioridade_media" class="form-check-label">média</label>
                                     </div>
                                     
                                     <!-- Alta -->
                                     <div class="form-check-inline col-sm-3">
-                                        <input class="form-check-input"  type="radio" name="prioridade" id="prioridade_alta" value= 3 <?php echo ($tarefa['prioridade'] == 3) ? 'checked' : ''; ?> >
+                                        <input class="form-check-input"  type="radio" name="prioridade" id="prioridade_alta" required value= 3 <?php echo ($tarefa['prioridade'] == 3) ? 'checked' : ''; ?> >
                                         <label  for="prioridade_alta" class="form-check-label">alta</label>
                                     </div>
                                 </div>
