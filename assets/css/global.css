@@ -7,7 +7,7 @@
  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,200;1,400;1,700&display=swap');
 
 * {
-    --cor_1: #E6E8EA;
+    --cor_1: #fff;
     --cor_2: #FEB524;
     --cor_3: #52B6D7;
     --cor_4: #579FC5;
@@ -15,7 +15,8 @@
     --cor_6: #FFD06A;
     --cor_7: #558B2A;
     --cor_8: #040C0B;
-    --cor_9: #4E4E56;
+    --cor_9: #ececec;
+    --cor_10: #c2c2c2;
 
     --gradient_1: linear-gradient( 135deg, #52B6D7 10%, #558B2A 100%);
     

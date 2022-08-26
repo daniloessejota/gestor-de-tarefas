@@ -27,26 +27,24 @@
     <div class="container-fluid">
 
         <!-- Cabeçalho da Página -->
-        <header>
-            <div class="row justify-content-center">
-                <div class="col-sm-4 col-md-6 mb-2 text-center">
+        <div class="row p-1">
+            <div class="col-sm-6 col-md-6 mb-2">
+                <header>
+                
                 <h1 class="fw-bold pt-3"><?php echo ($tarefa['id'] > 0) ? 'Edição' : ''; ?></h1>
 
-                <p class="fs-4"><?php echo ($tarefa['id'] > 0) ? '' : '<span class="fs-3 fw-bolder">Olá, Seja Bem-Vindo!</span> <br> Eu sou o <span class="fst-italic fw-bolder">Alfred</span>, seu gestor de tarefas. Digite as tarefas que você quer fazer e vou anotar elas para você!'; ?></p>
-                </div>
+                <div><img src="assets/img/to-do.svg" alt="ilustração de homem segurando um lápis gigante olhando para um calendário em suas costas" class="pt-3 pb-2 d-block mx-auto"></div>
+
+                <p class="fs-5 pt-3"><?php echo ($tarefa['id'] > 0) ? '' : '<span class="fs-3 fw-bolder">Olá, Seja Bem-Vindo!</span> <br> Eu sou o <span class="fst-italic fw-bolder">Alfred</span>, seu gestor de tarefas. Digite as tarefas que você quer fazer e vou anotar elas para você!'; ?></p>
+            
+                </header>
             </div>
-        </header>
         
         <!-- Início do Formulário -->
-        <div class="row justify-content-center">
-            <div class="col-sm-4 col-md-6 form mb-5">
+        
+            <div class="col-sm-6 col-md-6 form mb-5 mt-5">
 
                 <form action="" method="post">
-
-                    <!-- Imagem do ínicio do Formulário -->
-                    <div class="row justify-content-center">
-                        <div class="col-sm-4 col-md-4 pt-3 pb-2"><img src="assets/img/to-do.svg" alt="ilustração de homem segurando um lápis gigante olhando para um calendário em suas costas"></div>
-                    </div>
 
                     <div class="row pt-3">
 
@@ -54,51 +52,35 @@
                         <input type="hidden" name="id" value="<?php echo $tarefa['id']; ?>">
 
                         <!-- Input Tarefa  -->
-                        <div class="col-sm-8 col-md-8">
+                        <div class="col-sm-12 col-md-12">
                             <label for="tarefa" class="form-label fw-bold">Tarefa:</label>
                             <input type="text" name="tarefa" id="tarefa" placeholder="escreva aqui o que você quer fazer" required value="<?php echo $tarefa['tarefas']; ?>" class="form-control">
                         </div>
 
-                        <div class="col-sm-4 col-md-4">
+                    </div> 
+
+                    <div class="row pt-2">
 
                         <!-- Input Prazo -->
-                        <label for="prazo" class="form-label fw-bold">Prazo: </label>
+                        <div class="col-sm-6 col-md-6">
+                            <label for="prazo" class="form-label fw-bold">Prazo: </label>
 
-                        <input type="date" name="prazo" id="prazo" required value="<?php echo $tarefa['prazo']; ?>" class="form-control">
-
-                        <?php if ($tem_erros and array_key_exists('prazo', $erros_validacao)) : ?>
-                            <span class="fw-light fs-6 text-danger"><?php echo $erros_validacao['prazo']; ?></span>
-                        <?php endif; ?>
+                            <input type="date" name="prazo" id="prazo" required value="<?php echo $tarefa['prazo']; ?>" class="form-control">
+                            <?php if ($tem_erros and array_key_exists('prazo', $erros_validacao)) : ?>
+                                <span class="fw-light fs-6 text-danger"><?php echo $erros_validacao['prazo']; ?></span>
+                            <?php endif; ?>
 
                         </div>
-                    </div> 
-                               
-                    <div class="row pt-3">
-                        <div class="col-12">
-                            <!-- Input Prioridade -->
-                                <label for="prioridade" class="form-check-label fw-bold">Prioridade:</label>
-                                
-                                <div class="row pt-2">
 
-                                    <!-- Baixa -->
-                                    <div class="form-check-inline col-sm-3">
-                                        <input class="form-check-input" type="radio" name="prioridade" id="prioridade_baixa" required value= 1 <?php echo ($tarefa['prioridade'] == 1) ? 'checked' : ''; ?> >
-                                        <label for="prioridade_baixa" class="form-check-label">baixa</label>
-                                    </div>
-
-                                    <!-- Média -->
-                                    <div class="form-check-inline col-sm-3">
-                                        <input class="form-check-input" type="radio" name="prioridade" id="prioridade_media" required value= 2 <?php echo ($tarefa['prioridade'] == 2) ? 'checked' : ''; ?> >
-                                        <label  for="prioridade_media" class="form-check-label">média</label>
-                                    </div>
-                                    
-                                    <!-- Alta -->
-                                    <div class="form-check-inline col-sm-3">
-                                        <input class="form-check-input"  type="radio" name="prioridade" id="prioridade_alta" required value= 3 <?php echo ($tarefa['prioridade'] == 3) ? 'checked' : ''; ?> >
-                                        <label  for="prioridade_alta" class="form-check-label">alta</label>
-                                    </div>
-                                </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label for="prioridade" class="form-label fw-bold">Prioridade:</label>
+                                <select name="prioridade" id="prioridade" required class="form-select">
+                                    <option value="1" <?php echo ($tarefa['prioridade'] == 1) ? 'selected' : ''; ?>>baixa</option>
+                                    <option value="2" <?php echo ($tarefa['prioridade'] == 2) ? 'selected' : ''; ?>>média</option>
+                                    <option value="3" <?php echo ($tarefa['prioridade'] == 3) ? 'selected' : ''; ?>>alta</option>
+                                </select>
                         </div>
+
                     </div>
 
                     <!-- Descrição -->
@@ -106,17 +88,16 @@
                         <div class="col">
                             <label for="descricao" class="form-label fw-bold">Descrição: <span class="fw-light fs-6">(opcional)</span></label>
 
-                            <textarea name="descricao" id="descricao" maxlength="80" placeholder="escreva os detalhes de sua tarefa" class="form-control" ><?php echo $tarefa['descricao']; ?>
-                            </textarea>
+                            <textarea name="descricao" id="descricao" maxlength="80" placeholder="escreva os detalhes de sua tarefa" class="form-control" ><?php echo $tarefa['descricao']; ?></textarea>
                         </div>
                     </div>
 
                     <!-- Conclusão Check -->
                     <div class="row pt-3 pb-3">
 
-                        <div class="col-sm-12 col-md-4">
+                        <div class="col-sm-12 col-md-12">
                             <?php echo ($tarefa['tarefa_concluida'] == 1)  ?
-                            '<input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value = 1 checked>' : '<input class="form-check-input" type="checkbox" name="concluida" id="tarefa_finalizada" value = 1>' ; ?>
+                            '<input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value=1 checked>' : '<input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value=1>' ; ?>
 
                             <?php echo ($tarefa['tarefa_concluida'] == 1)  ? '<label for="tarefa_finalizada" class="form-check-label" for="tarefa_finalizada">tarefa finalizada</label>'  : '<label for="tarefa_finalizada" class="form-check-label" for="tarefa_finalizada">tarefa finalizada</label>'; ?>
                         </div>
@@ -137,7 +118,7 @@
                 </form>
         
             </div>  
-        </div>
+        </div>                    
             
     </div>
 

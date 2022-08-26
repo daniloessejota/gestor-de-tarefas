@@ -1,6 +1,9 @@
 <?php
     //Script PHP para Cadastrar e Ler as Tarefas no Banco de Dados;
 
+    //print_r($_POST);
+    //exit;
+
     require ("database.php");
     require ("helpers.php");
 
@@ -60,8 +63,11 @@
             'descricao' => $_POST['descricao'] ?? '',
             'prazo' => $_POST['prazo'] ?? '',
             'prioridade' => $_POST['prioridade'] ?? '',
-            'tarefa_concluida' =>  $_POST['concluida'] ?? 0,
+            'tarefa_concluida' =>  $_POST['tarefa_finalizada'] ?? 0,
         ];
     
+    //print_r($tarefa);
+    //exit;
+
     require ('form.php');
 ?>

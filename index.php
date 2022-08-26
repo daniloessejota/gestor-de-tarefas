@@ -25,8 +25,6 @@
 <body>
     
     <div class="container-fluid">
-
-        <div>
             
         <?php     
             require ('tasks.php');
@@ -36,7 +34,6 @@
             <?php require ('table-tasks.php');?>
         <?php endif; ?>
         
-        </div>
         
     </div>
 

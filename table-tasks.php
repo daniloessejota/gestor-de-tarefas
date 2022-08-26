@@ -23,7 +23,7 @@
 </head>
 <body>
     
-    <div class="container">
+    <div class="container-fluid">
     <h1 class="titles fw-bold">Tarefas</h1>
 
     <div class="table-responsive">

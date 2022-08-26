@@ -3,13 +3,18 @@
 /* ESTILOS ADICIONAIS E CUSTOMIZADOS */
 
 body {
-    background: var(--gradient_1);
+    background: var(--cor_9);
     font-family: var(--font_2);
+}
+
+img {
+    max-height: 250px;
+    max-width: 250px;
 }
 
 .form {
     background-color: var(--cor_1);
-    border-radius: 5px;
+    border: 2px solid var(--cor_8);
     box-shadow: var(--shadow_1);
 }
 
