@@ -6,17 +6,18 @@
 
  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,200;1,400;1,700&display=swap');
 
+ @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@900&display=swap');
+
 * {
     --cor_1: #fff;
-    --cor_2: #FEB524;
-    --cor_3: #52B6D7;
-    --cor_4: #579FC5;
-    --cor_5: #DB0530;
-    --cor_6: #FFD06A;
-    --cor_7: #558B2A;
-    --cor_8: #040C0B;
-    --cor_9: #ececec;
-    --cor_10: #c2c2c2;
+    --cor_2: #326789;
+    --cor_3: #78A6C8;
+    --cor_4: #e9eef2;
+    --cor_5: #e65c4f;
+    --cor_6: #c;
+    --cor_7: #040C0B;
+    --cor_8: #ececec;
+    --cor_9: #c2c2c2;
 
     --gradient_1: linear-gradient( 135deg, #52B6D7 10%, #558B2A 100%);
     
@@ -24,4 +25,9 @@
     
     --font_1: 'Inter', system-ui, sans-serif;
     --font_2: 'IBM Plex Sans', system-ui, sans-serif;
+    --font_3: 'Libre Franklin', system-ui, sans-serif;
+
+    --img_1: url(assets/img/blob-background.svg);
+    --img_2: url(assets/img/blob-background.jpg);
+    --img-3: url(assets/img/wave.svg);
 }

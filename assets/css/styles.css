@@ -3,8 +3,16 @@
 /* ESTILOS ADICIONAIS E CUSTOMIZADOS */
 
 body {
-    background: var(--cor_9);
     font-family: var(--font_2);
+}
+
+.saudacao {
+    font-family: var(--font_3);
+    color: var(--cor_5);
+}
+
+p {
+    line-height: 1.5em;
 }
 
 img {
@@ -14,9 +22,9 @@ img {
 
 .form {
     background-color: var(--cor_1);
-    border: 2px solid var(--cor_8);
+    
     box-shadow: var(--shadow_1);
-}
+} 
 
 .titles {
     color: var(--cor_1);

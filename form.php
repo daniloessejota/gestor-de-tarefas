@@ -22,27 +22,29 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
-<body>
+<body style="background-image: var(--img_1); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
     
-    <div class="container-fluid">
+    <div class="container">
 
         <!-- Cabeçalho da Página -->
-        <div class="row p-1">
-            <div class="col-sm-6 col-md-6 mb-2">
+        <div class="row pt-4 justify-content-center">
+            <div class="col-sm-6 col-md-6">
                 <header>
                 
-                <h1 class="fw-bold pt-3"><?php echo ($tarefa['id'] > 0) ? 'Edição' : ''; ?></h1>
+                <?php echo ($tarefa['id'] > 0) ? '<h1 class="fw-bold pt-3">Edição</h1>' : ''; ?>
 
-                <div><img src="assets/img/to-do.svg" alt="ilustração de homem segurando um lápis gigante olhando para um calendário em suas costas" class="pt-3 pb-2 d-block mx-auto"></div>
+                <p class="fs-5"><?php echo ($tarefa['id'] > 0) ? '' : '<span class="saudacao display-5">Olá, Bem-Vindo(a)!</span> <br> Eu sou o <span class="fst-italic fw-bolder">Alfred</span>, seu gestor de tarefas. Digite o que você quer fazer e vou anotar e lembrar isso para você!'; ?></p>
 
-                <p class="fs-5 pt-3"><?php echo ($tarefa['id'] > 0) ? '' : '<span class="fs-3 fw-bolder">Olá, Seja Bem-Vindo!</span> <br> Eu sou o <span class="fst-italic fw-bolder">Alfred</span>, seu gestor de tarefas. Digite as tarefas que você quer fazer e vou anotar elas para você!'; ?></p>
+                <div><img src="assets/img/to-do.svg" alt="ilustração de homem segurando um lápis gigante olhando para um calendário em suas costas" class="d-block mx-auto"></div>
             
-                </header>
+                </header><span></span>
             </div>
-        
+        </div>
+
+        <div class="row pt-4 pb-4 justify-content-center fs-5">
         <!-- Início do Formulário -->
         
-            <div class="col-sm-6 col-md-6 form mb-5 mt-5">
+            <div class="col-sm-6 col-md-6 form">
 
                 <form action="" method="post">
 
@@ -53,7 +55,7 @@
 
                         <!-- Input Tarefa  -->
                         <div class="col-sm-12 col-md-12">
-                            <label for="tarefa" class="form-label fw-bold">Tarefa:</label>
+                            <label for="tarefa" class="form-label fw-bold">tarefa:</label>
                             <input type="text" name="tarefa" id="tarefa" placeholder="escreva aqui o que você quer fazer" required value="<?php echo $tarefa['tarefas']; ?>" class="form-control">
                         </div>
 
@@ -63,17 +65,17 @@
 
                         <!-- Input Prazo -->
                         <div class="col-sm-6 col-md-6">
-                            <label for="prazo" class="form-label fw-bold">Prazo: </label>
+                            <label for="prazo" class="form-label fw-bold">prazo: </label>
 
                             <input type="date" name="prazo" id="prazo" required value="<?php echo $tarefa['prazo']; ?>" class="form-control">
                             <?php if ($tem_erros and array_key_exists('prazo', $erros_validacao)) : ?>
-                                <span class="fw-light fs-6 text-danger"><?php echo $erros_validacao['prazo']; ?></span>
+                                <span class="fw-light text-danger"><?php echo $erros_validacao['prazo']; ?></span>
                             <?php endif; ?>
 
                         </div>
 
                         <div class="col-sm-6 col-md-6">
-                            <label for="prioridade" class="form-label fw-bold">Prioridade:</label>
+                            <label for="prioridade" class="form-label fw-bold">prioridade:</label>
                                 <select name="prioridade" id="prioridade" required class="form-select">
                                     <option value="1" <?php echo ($tarefa['prioridade'] == 1) ? 'selected' : ''; ?>>baixa</option>
                                     <option value="2" <?php echo ($tarefa['prioridade'] == 2) ? 'selected' : ''; ?>>média</option>
@@ -86,7 +88,7 @@
                     <!-- Descrição -->
                     <div class="row pt-3">
                         <div class="col">
-                            <label for="descricao" class="form-label fw-bold">Descrição: <span class="fw-light fs-6">(opcional)</span></label>
+                            <label for="descricao" class="form-label fw-bold">descrição: <span class="fw-light fs-6">(opcional)</span></label>
 
                             <textarea name="descricao" id="descricao" maxlength="80" placeholder="escreva os detalhes de sua tarefa" class="form-control" ><?php echo $tarefa['descricao']; ?></textarea>
                         </div>
@@ -107,11 +109,11 @@
                     <div class="row pt-3 pb-3 justify-content-end">
                         <div class="col-auto">
                             <?php echo ($tarefa['id'] > 0) ?
-                            '<button type="button" class="btn btn-outline-primary fw-bold link"><a href="index.php">Cancelar</a></button>' : ''; ?>
+                            '<button type="button" class="btn btn-outline-primary fw-bold link fs-5"><a href="index.php">Cancelar</a></button>' : ''; ?>
                         </div>
 
                         <div class="col-auto">
-                            <a><input type="submit" id="tabela_resultado" class="btn btn-primary fw-bold" value= "<?php echo ($tarefa['id'] > 0) ? 'Atualizar' : 'Cadastrar'; ?>" ></a>
+                            <a><input type="submit" id="tabela_resultado" class="btn btn-primary fw-bold fs-5" value= "<?php echo ($tarefa['id'] > 0) ? 'Atualizar' : 'Cadastrar'; ?>" ></a>
                         </div>
                     </div>
                     
