@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* CUSTOMIZANDO CLASSES DO BOOTSTRAP */
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid var(--cor_6);
+    border-radius: 0;
+}
+
+.form-select {
+    border: none;
+    border-bottom: 2px solid var(--cor_6);
+    border-radius: 0;
+}
+
+.form-control:focus-visible, .form-select:focus-visible {
+    border-color: var(--cor_6) ;
+}
+
+.form-check-input {
+    border: 2px solid var(--cor_6);
+}
+
+.table-bordered {
+    border-color: var(--cor_9);
+}

@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
-<body style="background-image: var(--img_1); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+
+<body>
     
     <div class="container">
 
@@ -35,13 +36,13 @@
 
                 <p class="fs-5"><?php echo ($tarefa['id'] > 0) ? '' : '<span class="saudacao display-5">Olá, Bem-Vindo(a)!</span> <br> Eu sou o <span class="fst-italic fw-bolder">Alfred</span>, seu gestor de tarefas. Digite o que você quer fazer e vou anotar e lembrar isso para você!'; ?></p>
 
-                <div><img src="assets/img/to-do.svg" alt="ilustração de homem segurando um lápis gigante olhando para um calendário em suas costas" class="d-block mx-auto"></div>
+                <div><img src="assets/img/to-do.svg" alt="um homem segurando um lápis e olhando para um caderno com uma lista de tarefas" class="d-block mx-auto"></div>
             
                 </header><span></span>
             </div>
         </div>
 
-        <div class="row pt-4 pb-4 justify-content-center fs-5">
+        <div class="row pt-4 pb-4  pe-2 ps-2 justify-content-center fs-5">
         <!-- Início do Formulário -->
         
             <div class="col-sm-6 col-md-6 form">
@@ -90,14 +91,14 @@
                         <div class="col">
                             <label for="descricao" class="form-label fw-bold">descrição: <span class="fw-light fs-6">(opcional)</span></label>
 
-                            <textarea name="descricao" id="descricao" maxlength="80" placeholder="escreva os detalhes de sua tarefa" class="form-control" ><?php echo $tarefa['descricao']; ?></textarea>
+                            <textarea name="descricao" id="descricao" maxlength="80" placeholder="escreva os detalhes de sua tarefa" class="form-control border-textarea" ><?php echo $tarefa['descricao']; ?></textarea>
                         </div>
                     </div>
 
                     <!-- Conclusão Check -->
                     <div class="row pt-3 pb-3">
 
-                        <div class="col-sm-12 col-md-12">
+                        <div class="col-sm-12 col-md-12 fs-6">
                             <?php echo ($tarefa['tarefa_concluida'] == 1)  ?
                             '<input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value=1 checked>' : '<input class="form-check-input" type="checkbox" name="tarefa_finalizada" id="tarefa_finalizada" value=1>' ; ?>
 

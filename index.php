@@ -30,9 +30,9 @@
             require ('tasks.php');
         ?>
 
-        <?php // if ($exibe_tabela) : ?>
-            <?php // require ('table-tasks.php');?>
-        <?php // endif; ?>
+        <?php if ($exibe_tabela) : ?>
+            <?php require ('table-tasks.php');?>
+        <?php endif; ?>
         
         
     </div>

@@ -34,7 +34,7 @@
 
     //Formatando o a conclusão para leitura do usuário
     function exibe_conclusao($valor) {
-        echo ($valor == 0)  ? '<span class="alta fw-bold">NÃO</span>' : '<span class="fw-bold">SIM</span>'; 
+        echo ($valor == 0)  ? '<span class="alta fw-bold">NÃO</span>' : '<span class="tarefa-concluida fw-bold">SIM</span>'; 
     }
 
     //Confere se existe valores transmitidos via POST 

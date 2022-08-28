@@ -1,9 +1,10 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 /* ESTILOS ADICIONAIS E CUSTOMIZADOS */
 
 body {
     font-family: var(--font_2);
+    background: var(--img_1) no-repeat fixed;
 }
 
 .saudacao {
@@ -22,16 +23,21 @@ img {
 
 .form {
     background-color: var(--cor_1);
-    
     box-shadow: var(--shadow_1);
-} 
+}
+
+.border-textarea {
+    border-top: 2px solid var(--cor_6);
+    border-left: 2px solid var(--cor_6);
+    border-right: 2px solid var(--cor_6);
+}
 
 .titles {
-    color: var(--cor_1);
+    color: var(--cor_5);
 }
 
 table {
-    background-color: var(--cor_1);
+    background-color: var(--cor_4);
 }
 
 button > a {
@@ -43,20 +49,24 @@ button > a:hover {
 }
 
 thead {
-    background-color: var(--cor_7);
+    background-color: var(--cor_2);
     color: var(--cor_1);
 }
 
 .baixa {
-    color: var(--cor_4);
+    color: var(--cor_3);
 }
 
 .media {
-    color: var(--cor_2);
+    color: var(--cor_10);
 }
 
 .alta {
     color: var(--cor_5);
+}
+
+.tarefa-concluida {
+    color: var(--cor_11);
 }
 
 td > a {
@@ -65,4 +75,12 @@ td > a {
 
 .excluir, .bi-trash {
     color: var(--cor_5);
+}
+
+/* Novo background do body para dispositivos móveis */
+@media (max-width: 576px) {
+    body {
+        background-image: none;
+        background-color: var(--cor_4);
+    }
 }

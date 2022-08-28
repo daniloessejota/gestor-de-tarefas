@@ -48,7 +48,7 @@
                 <td> <?php echo exibe_conclusao($valor['tarefa_concluida'])?> </td>
 
                 <td class="text-center">
-                    <a href="edit-tasks.php?id=<?php echo $valor['id'];?>" class="editar p-1"><i class="bi bi-pencil-square pe-2"></i>EDITAR</a>
+                    <a href="edit-tasks.php?id=<?php echo $valor['id'];?>" class="editar p-1 fw-bold"><i class="bi bi-pencil-square pe-2"></i>EDITAR</a>
                 </td>
                 
                 <td class="text-center">
