@@ -32,13 +32,13 @@
             <div class="col-sm-6 col-md-6">
                 <header>
                 
-                <?php echo ($tarefa['id'] > 0) ? '<h1 class="fw-bold pt-3">Edição</h1>' : ''; ?>
+                <?php echo ($tarefa['id'] > 0) ? '<h1 class="fw-bold pt-3 titles text-center">Edição</h1>' : ''; ?>
 
                 <p class="fs-5"><?php echo ($tarefa['id'] > 0) ? '' : '<span class="saudacao display-5">Olá, Bem-Vindo(a)!</span> <br> Eu sou o <span class="fst-italic fw-bolder">Alfred</span>, seu gestor de tarefas. Digite o que você quer fazer e vou anotar e lembrar isso para você!'; ?></p>
 
                 <div><img src="assets/img/to-do.svg" alt="um homem segurando um lápis e olhando para um caderno com uma lista de tarefas" class="d-block mx-auto"></div>
             
-                </header><span></span>
+                </header>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
 
                     <div class="row pt-3">
 
-                        <!-- Input ID  - não deve ser visualizado -->
+                        <!-- Input ID -->
                         <input type="hidden" name="id" value="<?php echo $tarefa['id']; ?>">
 
                         <!-- Input Tarefa  -->
@@ -69,6 +69,7 @@
                             <label for="prazo" class="form-label fw-bold">prazo: </label>
 
                             <input type="date" name="prazo" id="prazo" required value="<?php echo $tarefa['prazo']; ?>" class="form-control">
+                            
                             <?php if ($tem_erros and array_key_exists('prazo', $erros_validacao)) : ?>
                                 <span class="fw-light text-danger"><?php echo $erros_validacao['prazo']; ?></span>
                             <?php endif; ?>
@@ -110,11 +111,11 @@
                     <div class="row pt-3 pb-3 justify-content-end">
                         <div class="col-auto">
                             <?php echo ($tarefa['id'] > 0) ?
-                            '<button type="button" class="btn btn-outline-primary fw-bold link fs-5"><a href="index.php">Cancelar</a></button>' : ''; ?>
+                            '<button type="button" class="btn btn-outline-primary btn-link fw-bold link fs-5"><a href="index.php" class="link">Cancelar</a></button>' : ''; ?>
                         </div>
 
                         <div class="col-auto">
-                            <a><input type="submit" id="tabela_resultado" class="btn btn-primary fw-bold fs-5" value= "<?php echo ($tarefa['id'] > 0) ? 'Atualizar' : 'Cadastrar'; ?>" ></a>
+                            <a><input type="submit" id="tabela_resultado" class="btn btn-primary btn-cadastro fw-bold fs-5" value= "<?php echo ($tarefa['id'] > 0) ? 'Atualizar' : 'Cadastrar'; ?>" ></a>
                         </div>
                     </div>
                     

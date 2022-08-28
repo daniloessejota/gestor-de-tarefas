@@ -14,13 +14,27 @@
     border-radius: 0;
 }
 
-.form-control:focus-visible, .form-select:focus-visible {
-    border-color: var(--cor_6) ;
+.form-control:focus, .form-select:focus, .form-check-input:focus  {
+    color: var(--cor_6);
+    background-color: var(--cor_1);
+    border-color: var(--cor_6);
+    outline: 0;
 }
 
 .form-check-input {
     border: 2px solid var(--cor_6);
 }
+
+.form-check-input:checked {
+    background-color: var(--cor_6);
+    border-color: var(--cor_6);
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 0em;
+}
+
+/* ================ ELEMENTOS DA TABELA ================ */
 
 .table-bordered {
     border-color: var(--cor_9);
