@@ -48,7 +48,8 @@
 
 **Quais desafios você enfrentou e como você superou os desafios?**
 
-Um desafio foi fazer funcionar a sessão de edição das tarefas, muitos erros aconteceram nessa parte do projeto e no ínicio eu ignorei a recomendação de reaproveitar o formulário de cadastro para também realizar as edições. Isso me causou muitos problemas, além dos erros o trabalho de ajustes de interface, por exemplo, eram duplicado e tomava muito tempo.
+Um desafio foi fazer funcionar a sessão de edição das tarefas, muitos erros aconteceram nessa parte do projeto e no ínicio eu ignorei a recomendação de reaproveitar o formulário de cadastro para também realizar as edições. Isso me causou muitos problemas, além dos erros o trabalho de ajustes de interface, por exemplo, era muito maior e tomava muito tempo.
+
 Resolvi isso refazendo toda essa parte do projeto do zero, revertendo ao estado inicial com ajuda do Git e lendo com mais paciência as orientações do livro que usei como referência para construir o projeto.
 
 ## Melhorias
@@ -73,4 +74,4 @@ As informações abaixo apresentam melhorias no sistema que podem ser implementa
 
 ## Créditos
 
-- Obrigado, [**@InFog**](https://github.com/InFog)  e [**@casadocodigo**](https://github.com/InFog)!
+- Obrigado, [**@InFog**](https://github.com/InFog)  e [**@casadocodigo**](https://github.com/casadocodigo)!
